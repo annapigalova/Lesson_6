@@ -45,15 +45,13 @@ public abstract class Collection {
 
 	public boolean isWorkExist(String workName) {
 
-		boolean isWorkExist = false;
-
 		for (int i = 0; i < worksList.size(); i++) {
-			if (workName.equals(this.worksList.get(i).getWorkName()))
+			if (workName.equals(worksList.get(i).getWorkName()))
 				return true;
 
 		}
 
-		return isWorkExist;
+		return false;
 
 	}
 
