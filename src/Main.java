@@ -20,7 +20,7 @@ public class Main {
 			}
 		}
 
-		if (remarkBook.isWorkExist("Novel #1") == true) {
+		if (remarkBook.isWorkExist("Novel #1")) {
 			System.out.println("Book exists");
 
 		} else {
