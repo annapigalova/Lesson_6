@@ -1,5 +1,5 @@
 
-public class Work {
+public abstract class Work {
 	
 	String workName;
 	String author;
@@ -19,6 +19,15 @@ public class Work {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	public abstract String printText();
+
+	@Override
+	public String toString() {
+		 
+		return  "Name: " + getWorkName() + System.lineSeparator() + "Author: " + getAuthor();
+	}
+	
 	
 
 }

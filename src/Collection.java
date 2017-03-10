@@ -35,7 +35,7 @@ public abstract class Collection {
 		return worksList;
 	}
 
-	public void addWorks(Work work) {
+	public void addWork(Work work) {
 		worksList.add(work);
 	}
 
@@ -43,16 +43,27 @@ public abstract class Collection {
 		worksList.remove(work);
 	}
 
-	public void searchByWorkName(String workName) {
-		ArrayList<Work> searchResult = new ArrayList<>();
+	public boolean isWorkExist(String workName) {
 
-		for (Work wrk : worksList)
+		boolean isWorkExist = false;
 
-			if (workName.equals(wrk.getWorkName()))
-				searchResult.add(wrk);
+		for (int i = 0; i < worksList.size(); i++) {
+			if (workName.equals(this.worksList.get(i).getWorkName()))
+				return true;
+
+		}
+
+		return isWorkExist;
 
 	}
 
 	public abstract String getPrintType();
+
+	@Override
+	public String toString() {
+
+		return "Name: " + getName() + System.lineSeparator() + "Pages: " + getPagesNum() + System.lineSeparator()
+				+ "Price: " + getPrice();
+	}
 
 }
