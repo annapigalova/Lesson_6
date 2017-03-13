@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class Main {
@@ -20,12 +21,17 @@ public class Main {
 			}
 		}
 
+		// Find by WorkName
 		if (remarkBook.isWorkExist("Novel #1")) {
 			System.out.println("Book exists");
 
 		} else {
 			System.out.println("Book doesn't exist");
 		}
+
+		// Sort by WorkName Example #1
+		System.out.println("Sort List Ex.1");
+		sortWorks(worksList);
 
 	}
 
@@ -60,6 +66,15 @@ public class Main {
 
 		return worksList;
 
+	}
+
+	private static void sortWorks(ArrayList<Work> workList) {
+
+		Collections.sort(workList, Collection.sortByWork);
+
+		for (int i = 0; i < workList.size(); i++) {
+			System.out.println(workList.get(i));
+		}
 	}
 
 }

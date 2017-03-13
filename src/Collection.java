@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public abstract class Collection {
 
@@ -63,5 +64,14 @@ public abstract class Collection {
 		return "Name: " + getName() + System.lineSeparator() + "Pages: " + getPagesNum() + System.lineSeparator()
 				+ "Price: " + getPrice();
 	}
+
+	public static Comparator<Work> sortByWork = new Comparator<Work>() {
+		public int compare(Work w1, Work w2) {
+
+			int workSort = w1.getWorkName().compareTo(w2.getWorkName());
+			return workSort;
+		}
+
+	};
 
 }
