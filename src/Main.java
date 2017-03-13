@@ -38,10 +38,6 @@ public class Main {
 
 		sortWorks2(worksList);
 
-		// Sort by WorkName Example #3
-
-		sortWorks3(worksList);
-
 	}
 
 	private static ArrayList<Work> initialWorks() {
@@ -101,21 +97,4 @@ public class Main {
 		System.out.println();
 	}
 
-	private static void sortWorks3(ArrayList<Work> worksList) {
-
-		System.out.println("Sort List Ex.3");
-		Collections.sort(worksList, new Comparator<Work>() {
-
-			public int compare(Work w1, Work w2) {
-				return w1.getWorkName().compareTo(w2.getWorkName());
-			}
-		});
-       
-		for (int i = 0; i < worksList.size(); i++) {
-			System.out.println(worksList.get(i));
-		}
-
-		System.out.println();
-
-	}
 }
