@@ -1,16 +1,14 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		ArrayList<Work> worksList = initialWorks();
-
 		Collection remarkBook = new Book();
+
+		ArrayList<Work> worksList = initialWorks();
 
 		remarkBook.setName("Remark Colection");
 		remarkBook.setPagesNum(100500);
@@ -30,17 +28,27 @@ public class Main {
 			System.out.println("Book doesn't exist");
 		}
 
-		// Sort by WorkName Example #1
+		// Sort by WorkName
 
-		sortWorks1(worksList);
+		System.out.println("By WorkName");
 
-		// Sort by WorkName Example #2
+		remarkBook.sortByWork(remarkBook.getListWorks());
 
-		sortWorks2(worksList);
+		for (int i = 0; i < remarkBook.getListWorks().size(); i++) {
+			System.out.println(remarkBook.getListWorks().get(i));
+		}
 
-		// Sort by WorkName Example #3
+		System.out.println();
 
-		sortWorks3(worksList);
+		// Sort by Year
+
+		System.out.println("By Year");
+
+		remarkBook.sortByYearDesc(remarkBook.getListWorks());
+
+		for (int i = 0; i < remarkBook.getListWorks().size(); i++) {
+			System.out.println(remarkBook.getListWorks().get(i));
+		}
 
 	}
 
@@ -54,68 +62,30 @@ public class Main {
 
 		for (int i = 0; i < 15; i++) {
 
-			numAuthor = rn.nextInt(2);
+			numAuthor = rn.nextInt(authorList.size() - 1);
+			int year = rn.nextInt((1975 - 1860) + 1 ) + 1860;
 
 			Work novel = new Novel();
 			novel.setWorkName("Novel #" + i);
 			novel.setAuthor(authorList.get(numAuthor));
+			novel.setYear(year);
 			worksList.add(novel);
 
 			Work article = new Article();
 			article.setWorkName("Article #" + i);
 			article.setAuthor(authorList.get(numAuthor));
+			article.setYear(year);
 			worksList.add(article);
 
 			Work poem = new Poem();
 			poem.setWorkName("Poem #" + i);
 			poem.setAuthor(authorList.get(numAuthor));
+			poem.setYear(year);
 			worksList.add(poem);
 
 		}
 
 		return worksList;
-
-	}
-
-	private static void sortWorks1(ArrayList<Work> worksList) {
-
-		System.out.println("Sort List Ex.1");
-		Collections.sort(worksList, Collection.sortByWork);
-
-		for (int i = 0; i < worksList.size(); i++) {
-			System.out.println(worksList.get(i));
-		}
-
-		System.out.println();
-	}
-
-	private static void sortWorks2(ArrayList<Work> worksList) {
-
-		System.out.println("Sort List Ex.2");
-		Collections.sort(worksList);
-
-		for (int i = 0; i < worksList.size(); i++) {
-			System.out.println(worksList.get(i));
-		}
-
-		System.out.println();
-	}
-
-	private static void sortWorks3(ArrayList<Work> worksList) {
-
-		System.out.println("Sort List Ex.3");
-		Collections.sort(worksList, new Comparator<Work>() {
-
-			public int compare(Work w1, Work w2) {
-				return w1.getWorkName().compareTo(w2.getWorkName());
-			}
-		});
-       
-		for (int i = 0; i < worksList.size(); i++) {
-			System.out.println(worksList.get(i));
-		}
-
-		System.out.println();
 
 	}
 }

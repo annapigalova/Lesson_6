@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public abstract class Collection  {
 
-	String name;
-	int pagesNum;
-	double price;
+	private String name;
+	private int pagesNum;
+	private double price;
 	ArrayList<Work> worksList = new ArrayList<>();
 
 	public String getName() {
@@ -31,7 +32,7 @@ public abstract class Collection  {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
+	
 	public ArrayList<Work> getListWorks() {
 		return worksList;
 	}
@@ -65,7 +66,7 @@ public abstract class Collection  {
 				+ "Price: " + getPrice();
 	}
 
-	public static Comparator<Work> sortByWork = new Comparator<Work>() {
+	private static Comparator<Work> sortByWorkComparator = new Comparator<Work>() {
 		public int compare(Work w1, Work w2) {
 
 			int workSort = w1.getWorkName().compareTo(w2.getWorkName());
@@ -73,5 +74,38 @@ public abstract class Collection  {
 		}
 
 	};
+	
+	public void sortByWork(ArrayList<Work> worksList)
+	{
+		Collections.sort(worksList, sortByWorkComparator);
+	}
+	
+	private static Comparator<Work> sortByAuthorComparator = new Comparator<Work>() {
+		public int compare(Work w1, Work w2) {
+
+			int authorSort = w1.getAuthor().compareTo(w2.getAuthor());
+			return authorSort;
+		}
+
+	};
+	
+	public void sortByAuthor(ArrayList<Work> worksList)
+	{
+		Collections.sort(worksList, sortByAuthorComparator);
+	}
+	
+	private static Comparator<Work> sortByYearDescComparator = new Comparator<Work>() {
+		public int compare(Work w1, Work w2) {
+
+			int yearSort = Integer.compare(w2.getYear(), w1.getYear());
+			return yearSort;
+		}
+
+	};
+	
+	public void sortByYearDesc(ArrayList<Work> worksList)
+	{
+		Collections.sort(worksList, sortByYearDescComparator);
+	}
 
 }
