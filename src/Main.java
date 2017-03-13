@@ -38,7 +38,6 @@ public class Main {
 			System.out.println(remarkBook.getListWorks().get(i));
 		}
 
-<<<<<<< HEAD
 		System.out.println();
 
 		// Sort by Year
@@ -51,8 +50,6 @@ public class Main {
 			System.out.println(remarkBook.getListWorks().get(i));
 		}
 
-=======
->>>>>>> origin/master
 	}
 
 	private static ArrayList<Work> initialWorks() {
@@ -91,8 +88,6 @@ public class Main {
 		return worksList;
 
 	}
-<<<<<<< HEAD
-=======
 
 	private static void sortWorks1(ArrayList<Work> worksList) {
 
@@ -118,5 +113,4 @@ public class Main {
 		System.out.println();
 	}
 
->>>>>>> origin/master
 }
