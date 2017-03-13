@@ -89,28 +89,4 @@ public class Main {
 
 	}
 
-	private static void sortWorks1(ArrayList<Work> worksList) {
-
-		System.out.println("Sort List Ex.1");
-		Collections.sort(worksList, Collection.sortByWork);
-
-		for (int i = 0; i < worksList.size(); i++) {
-			System.out.println(worksList.get(i));
-		}
-
-		System.out.println();
-	}
-
-	private static void sortWorks2(ArrayList<Work> worksList) {
-
-		System.out.println("Sort List Ex.2");
-		Collections.sort(worksList);
-
-		for (int i = 0; i < worksList.size(); i++) {
-			System.out.println(worksList.get(i));
-		}
-
-		System.out.println();
-	}
-
 }
