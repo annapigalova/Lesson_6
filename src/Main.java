@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -30,8 +31,16 @@ public class Main {
 		}
 
 		// Sort by WorkName Example #1
-		System.out.println("Sort List Ex.1");
-		sortWorks(worksList);
+
+		sortWorks1(worksList);
+
+		// Sort by WorkName Example #2
+
+		sortWorks2(worksList);
+
+		// Sort by WorkName Example #3
+
+		sortWorks3(worksList);
 
 	}
 
@@ -68,13 +77,45 @@ public class Main {
 
 	}
 
-	private static void sortWorks(ArrayList<Work> workList) {
+	private static void sortWorks1(ArrayList<Work> worksList) {
 
-		Collections.sort(workList, Collection.sortByWork);
+		System.out.println("Sort List Ex.1");
+		Collections.sort(worksList, Collection.sortByWork);
 
-		for (int i = 0; i < workList.size(); i++) {
-			System.out.println(workList.get(i));
+		for (int i = 0; i < worksList.size(); i++) {
+			System.out.println(worksList.get(i));
 		}
+
+		System.out.println();
 	}
 
+	private static void sortWorks2(ArrayList<Work> worksList) {
+
+		System.out.println("Sort List Ex.2");
+		Collections.sort(worksList);
+
+		for (int i = 0; i < worksList.size(); i++) {
+			System.out.println(worksList.get(i));
+		}
+
+		System.out.println();
+	}
+
+	private static void sortWorks3(ArrayList<Work> worksList) {
+
+		System.out.println("Sort List Ex.3");
+		Collections.sort(worksList, new Comparator<Work>() {
+
+			public int compare(Work w1, Work w2) {
+				return w1.getWorkName().compareTo(w2.getWorkName());
+			}
+		});
+       
+		for (int i = 0; i < worksList.size(); i++) {
+			System.out.println(worksList.get(i));
+		}
+
+		System.out.println();
+
+	}
 }

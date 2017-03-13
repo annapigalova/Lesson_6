@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public abstract class Collection {
+public abstract class Collection  {
 
 	String name;
 	int pagesNum;

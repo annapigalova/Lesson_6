@@ -1,5 +1,5 @@
 
-public abstract class Work {
+public abstract class Work implements Comparable<Work>{
 	
 	String workName;
 	String author;
@@ -28,6 +28,10 @@ public abstract class Work {
 		return  "Name: " + getWorkName() + System.lineSeparator() + "Author: " + getAuthor();
 	}
 	
+	public int compareTo(Work wrk)
+	{
+	    return wrk.getWorkName().compareTo(this.getWorkName());
+	}
 	
 
 }
