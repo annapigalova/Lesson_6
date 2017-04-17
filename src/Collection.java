@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public abstract class Collection  {
+public abstract class Collection  {// в вашей иерерхии collection тоже является производным от Work
 
 	private String name;
 	private int pagesNum;

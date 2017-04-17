@@ -1,10 +1,13 @@
 
-public class Poem extends Work {
+public class Poem extends Work { // вы прослушали все объяснение темы наследование
+	// ваши производные классы не раширяют базовый абсолютно
+	// нет новых полей
+	// в крайнем случае вы даже не ограничиваете поведение базового класса
 
 	@Override
-	public String printText() {
+	public String printText() {// даже если закрыть глаза на неуместность этого метода
 	
-		return "Columns";
+		return "Columns";// то его тело попросту является хардкодом
 	}
 	
 	

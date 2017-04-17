@@ -1,5 +1,5 @@
 
-public abstract class Work {
+public abstract class Work {// куда подевались методы equals и hashCode?
 
 	private String workName;
 	private String author;
@@ -29,7 +29,8 @@ public abstract class Work {
 		this.year = year;
 	}
 
-	public abstract String printText();
+	public abstract String printText();// к этому занятию уже было объяснено о делении кода на тот, который обрабатывает данные, и тот, который что-то вводит-выводит
+	// наличие этого метода в классе-сущности является ошибкой
 
 	@Override
 	public String toString() {
